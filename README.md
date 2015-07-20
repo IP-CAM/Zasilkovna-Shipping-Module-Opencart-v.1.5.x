@@ -8,7 +8,7 @@
   <li>
     Přihlašte se do administrace, přejděte na stránku Extensions » Shipping a modul nainstalujte.
     <a href="https://cloud.githubusercontent.com/assets/11771520/8772304/64fca0d6-2ecb-11e5-996f-a98eb3b29494.png"><img width="200" height="200" src="https://cloud.githubusercontent.com/assets/11771520/8772304/64fca0d6-2ecb-11e5-996f-a98eb3b29494.png"></a><br><br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772309/6b7ef9a4-2ecb-11e5-9e45-8d468a4b7af0.png"><img width="600" height="46" src="https://cloud.githubusercontent.com/assets/11771520/8772309/6b7ef9a4-2ecb-11e5-9e45-8d468a4b7af0.png"></a><br><br>
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772309/6b7ef9a4-2ecb-11e5-9e45-8d468a4b7af0.png"><img width="600" height="25" src="https://cloud.githubusercontent.com/assets/11771520/8772309/6b7ef9a4-2ecb-11e5-9e45-8d468a4b7af0.png"></a><br><br>
   </li>
   <li>
     Po nainstalování modulu klikněte na tlačítko <i><strong>edit</strong></i> které se zobrazí místo tlačítka <i>install</i><br><br>
