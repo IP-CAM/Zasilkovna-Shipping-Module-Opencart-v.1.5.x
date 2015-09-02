@@ -74,6 +74,11 @@ class ControllerShippingZasilkovna extends Controller {
 				} else {
 					$this->data[$input_field_name] = $this->config->get($input_field_name);
 				}
+				
+				if($input_field = 'price' || $input_field = 'freeover'){
+					$this->data[$input_field_name] = str_replace(',', '.', $this->data[$input_field_name]);
+				}
+				
 				$input_field_name = "zasilkovna_enabled_".$i;				
 				if (isset($this->request->post[$input_field_name])) {
 					$this->data[$input_field_name] = $this->request->post[$input_field_name];
