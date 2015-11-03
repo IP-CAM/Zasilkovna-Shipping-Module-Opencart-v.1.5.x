@@ -21,7 +21,8 @@ $zasilkovna = new ControllerShippingZasilkovna($registry);
             <td>Cena</td>
             <td>Zdarma od</td>
             <td>Cílová země</td>
-            <td>Zobrazit</td>
+            <td>Zobrazit pobočky</th>
+            <td>Zobrazit</th>
           </tr>
         <?php
         for($i=0;$i<$zasilkovna->_servicesCnt;$i++) { ?>                  
@@ -68,9 +69,20 @@ $zasilkovna = new ControllerShippingZasilkovna($registry);
               ?> 
                 </select>
               
-            </td> 
-
-
+            </td>
+            <td>
+              <?php
+                $input_field_name = "zasilkovna_branches_enabled_".$i;
+              ?>
+              <select class="form-control" name="<?php echo $input_field_name;?>">
+              <?php if (${$input_field_name}) { ?>
+                <option value="1" selected="selected">ano</option>
+                <option value="0">ne</option>
+                <?php } else { ?>
+                <option value="1">ano</option>
+                <option value="0" selected="selected">ne</option>
+              <?php } ?>
+            </td>
             <td>                 
               <?php            
                 $input_field_name = "zasilkovna_enabled_".$i;                                       

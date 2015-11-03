@@ -174,14 +174,17 @@ function updateConnectedField(opts, id) {
           $JS.=$HELPER_JS;
           $addedHelperJS=true;
         }
-        $JS .= '<script>                
-          var radio = $(\'input:radio[name="shipping_method"][value="zasilkovna.'.$title.$i.'"]\');
-          var td = radio.parents("td").next(); 
-          if(td.find(\'#zasilkovna_box\').length == 0){
-            $(td).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=3 connect-field=textarea[name=comment] country='.$country.'" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');                                      
-            $(td).append(\'<p id="select_branch_message" style="color:red; font-weight:bold; display:none">Vyberte pobočku</p>\');
-          }
-        </script>';
+
+        if($this->config->get('zasilkovna_branches_enabled_'.$i)){
+          $JS .= '<script>                
+            var radio = $(\'input:radio[name="shipping_method"][value="zasilkovna.'.$title.$i.'"]\');
+            var td = radio.parents("td").next(); 
+            if(td.find(\'#zasilkovna_box\').length == 0){
+              $(td).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=3 connect-field=textarea[name=comment] country='.$country.'" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');                                      
+              $(td).append(\'<p id="select_branch_message" style="color:red; font-weight:bold; display:none">Vyberte pobočku</p>\');
+            }
+          </script>';
+        }
         $quote_data[$title.$i] = array(
           'id'            => 'zasilkovna.'.$title.$i,
           'code'            => 'zasilkovna.'.$title.$i,
