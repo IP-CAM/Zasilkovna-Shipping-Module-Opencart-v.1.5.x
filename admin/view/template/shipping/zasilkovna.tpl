@@ -142,6 +142,13 @@ $zasilkovna = new ControllerShippingZasilkovna($registry);
             </select></td>
         </tr>
         <tr>
+          <td>Maximální hmotnost:</td>
+          <td>
+              <?php $input_field_name = "zasilkovna_weight_max"; ?>
+              <input type="text" size="17" name="<?php echo $input_field_name;?>" value="<?php echo isset(${$input_field_name}) ? ${$input_field_name} : '';?>" />
+          </td>
+        </tr>
+        <tr>
           <td>Geo zone</td>
           <td><select name="zasilkovna_geo_zone_id">
               <option value="0"><?php echo $text_all_zones; ?></option>

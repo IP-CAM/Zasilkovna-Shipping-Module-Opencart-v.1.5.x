@@ -113,6 +113,11 @@ class ControllerShippingZasilkovna extends Controller {
 		} else {
 			$this->data['zasilkovna_geo_zone_id'] = $this->config->get('zasilkovna_geo_zone_id');
 		}	
+		if (isset($this->request->post['zasilkovna_weight_max'])) {
+			$this->data['zasilkovna_weight_max'] = $this->request->post['zasilkovna_weight_max'];
+		} else {
+			$this->data['zasilkovna_weight_max'] = $this->config->get('zasilkovna_weight_max');
+		}	
 		if (isset($this->request->post['zasilkovna_status'])) {
 			$this->data['zasilkovna_status'] = $this->request->post['zasilkovna_status'];
 		} else {
