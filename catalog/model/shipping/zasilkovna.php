@@ -36,7 +36,7 @@ $HELPER_JS = '<script> (function(d){ var el, id = "packetery-jsapi", head = d.ge
 if(typeof window.packetery != "undefined"){
   setTimeout(function(){initBoxes()},1000)
 }else{
-  setTimeout(function(){setRequiredOpt();},500)
+  setTimeout(function(){setRequiredOpt()},500)
 }
 function initBoxes(){
    var api = window.packetery;
@@ -48,20 +48,6 @@ function initBoxes(){
     });
    addHooks();  
    setRequiredOpt();
-
-}
-function overrideAQCValidate(){
-  var oldValidateAllFields = validateAllFields;
-  console.log(\'Packetery override: "validateAllFields" overridden!\');
-  validateAllFields = function(param){
-    console.log(\'Packetery override: packetery not selected.\');
-    if(!$(select_branch_message).is(\':visible\')){
-      oldValidateAllFields(param);
-    }
-    else{
-      alert(\'Vyberte pobo\u010Dku z\u00E1silkovny!\')
-    }
-  }
 }
 var SubmitButtonDisabled = true;
 function setRequiredOpt(){
@@ -69,11 +55,11 @@ function setRequiredOpt(){
         var disableButton=false;
         var zasilkovna_selected = false;
         var opts={
-            connectField: \'textarea#confirm_comment\'
+            connectField: \'textarea[name=comment]\'
           }        
         $("div.packetery-branch-list").each(            
             function() {               
-              var tr = $(this).closest(\'div.radio-input\');              
+              var tr = $(this).closest(\'tr\');              
               var radioButt = $(tr).find(\'input[name="shipping_method"]:radio\');     
               var select_branch_message = $(tr).find(\'#select_branch_message\');
 
@@ -82,7 +68,6 @@ function setRequiredOpt(){
               }else{//deselect branch (so when user click the radio again, he must select a branch). Made coz couldnt update connect-field if only clicked on radio with already selected branch
                 if(this.packetery.option("selected-id")>0){
                   this.packetery.option("selected-id",0);
-                  $(\'#zasilkovna_box\').hide();
                 }
                 //$(this).find(\'option:selected\', \'select\').removeAttr(\'selected\');
                 //$($(this).find(\'option\', \'select\')[0]).attr(\'selected\', \'selected\');
@@ -104,7 +89,6 @@ function setRequiredOpt(){
         if(!zasilkovna_selected){          
           updateConnectedField(opts,0);
         }
-    overrideAQCValidate();
 }
 
 function submitForm(){
@@ -141,11 +125,13 @@ function updateConnectedField(opts, id) {
               function trim(s) {
                   return s.replace(/^\s*|\s*$/, "")
                   }
-              f.val(trim(v)).change()
+              f.val(trim(v))
               }
 }
 
-    function addHooks(){     
+    function addHooks(){
+      //called when no zasilkovna method is selected. Dunno how to call this from the branch.js        
+      
       
       //set each radio button to call setRequiredOpt if clicked
       $(\'input[name="shipping_method"]:radio\').each(
@@ -161,19 +147,18 @@ function updateConnectedField(opts, id) {
           function() {             
             var fn = function(){       
               var selected_id = this.packetery.option("selected-id");             
-              var tr = $(this).closest(\'div.radio-input\');              
+              var tr = $(this).closest(\'tr\');              
               var radioButt = $(tr).find(\'input[name="shipping_method"]:radio\');                   
               if(selected_id)$(radioButt).attr("checked",\'checked\');
               setTimeout(setRequiredOpt, 1);
-              setTimeout(function(){ $("#confirm_comment").change(); }, 1500);
             };
             this.packetery.on("branch-change", fn);
             fn.call(this);
           }
-      );        
+      );            
     }
 
-    </script><style>#zasilkovna_box select { background: #261710 !important; border: 1px solid #AD8B49 !important; color: #FFF !important; }</style>';
+    </script>';
 
       $addedHelperJS = false;
       for($i = 0; $i <= 10 ;$i++){
@@ -196,12 +181,9 @@ function updateConnectedField(opts, id) {
         if($this->config->get('zasilkovna_branches_enabled_'.$i)){
           $JS .= '<script>                
             var radio = $(\'input:radio[name="shipping_method"][value="zasilkovna.'.$title.$i.'"]\');
-            var radio2 = $(\'input:radio[name="shipping_method"][value!="zasilkovna.'.$title.$i.'"]\');
-            $(radio).click( function (){ $(\'#zasilkovna_box\').show(); });
-            $(radio2).click( function (){ $(\'#zasilkovna_box\').hide(); });
-            var td = radio.parent(); 
+            var td = radio.parents("td").next(); 
             if(td.find(\'#zasilkovna_box\').length == 0){
-              $(td).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=8 connect-field=textarea#confirm_comment country='.$country.'" style="border: 1px dotted black; display: none;">Načítání: seznam poboček osobního odběru</div> \');                                      
+              $(td).append(\'<div id="zasilkovna_box" class="packetery-branch-list list-type=8 connect-field=textarea[name=comment] country='.$country.'" style="border: 1px dotted black;">Načítání: seznam poboček osobního odběru</div> \');                                      
               $(td).append(\'<p id="select_branch_message" style="color:red; font-weight:bold; display:none">Vyberte pobočku</p>\');
             }
           </script>';
