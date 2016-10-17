@@ -99,6 +99,18 @@ function submitForm(){
 }
 
 function updateConnectedField(opts, id) {
+          var branches;
+          if(typeof(opts) == "undefined"){
+              $(".packetery-branch-list").each(function() {
+                  if(this.packetery.option("selected-id")){
+                      opts = {
+                          connectField: "textarea[name=comment]",
+                          selectedId: this.packetery.option("selected-id")
+                      };
+                      branches = this.packetery.option("branches");
+                  }
+              });
+          }
           if (opts.connectField) {
               if (typeof(id) == "undefined") {
                   id = opts.selectedId
@@ -157,7 +169,9 @@ function updateConnectedField(opts, id) {
           }
       );            
     }
-
+$("#content").delegate("textarea[name=comment]", "change", function () {
+  updateConnectedField();
+});
     </script>';
 
       $addedHelperJS = false;
