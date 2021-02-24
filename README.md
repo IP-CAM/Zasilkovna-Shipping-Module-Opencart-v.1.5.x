@@ -1,44 +1,44 @@
-#[DEPRECATED] - modul již není udržován/no longer actively maintained
+# [DEPRECATED] - The module is no longer maintained / no Longer Actively Maintained
 
-<h1>Modul pro Opencart</h1>
-<h2>Instalace</h2>
-<ol style="color: black; ">
-  <li><a href="https://github.com/Zasilkovna/opencart/archive/master.zip">Stáhnout soubor modulu »</a></li>
+<H1> Module for OpenCart </ h1>
+<H2> Installation </ h2>
+<ol style = "color: black;">
+  <li> <a href="https://github.com/zasilkovnna/opencart/archive/master.zip"> Download file module »</a> </ li>
   <li>
-    Obsah adresáře <code>opencart-master</code> nakopírujte do kořenového adresáře vašeho obchodu opencart.<br>
-  </li>
+    Content directory <code> OpenCart-Master </ code> Copy to the root directory of your OpenCart store. <br>
+  </ li>
   <li>
-    Přihlašte se do administrace, přejděte na stránku Extensions » Shipping a modul nainstalujte.
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772304/64fca0d6-2ecb-11e5-996f-a98eb3b29494.png"><img width="200" height="200" src="https://cloud.githubusercontent.com/assets/11771520/8772304/64fca0d6-2ecb-11e5-996f-a98eb3b29494.png"></a><br><br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772309/6b7ef9a4-2ecb-11e5-9e45-8d468a4b7af0.png"><img width="600" height="25" src="https://cloud.githubusercontent.com/assets/11771520/8772309/6b7ef9a4-2ecb-11e5-9e45-8d468a4b7af0.png"></a><br><br>
-  </li>
+    Log in to the administration, go to Extensions »Shipping and install the module.
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772304/64FCA0D6-2ECB-11E5-96F-A98EB3B29494.png"> <img width = "200" height = "200" src = "https : //cloud.githubusercontent.com/assets/11771520/8772304/64FCA0D6-2ECB-11E5-96F-A98EB3B29494.png "> </a> <br>
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772309/6B7EF9A4-2ECB-11E5-9E45-8D468A4B7AF0.png"> <img width = "600" height = "25" src = "https : //cloud.githubusercontent.com/assets/11771520/8772309/6B7EF9A4-2ECB-11E5-9E45-8D468A4B7AF0.png "> </a> <br>
+  </ li>
   <li>
-    Po nainstalování modulu klikněte na tlačítko <i><strong>edit</strong></i> které se zobrazí místo tlačítka <i>install</i><br><br>
-  </li>
+    After installing the module, click <i> <strong> edit </ strong> </ i> which appears instead of the <I> Install </ i> <br> <br> <br>
+  </ li>
   <li>
-    Na stránce editace zadejte název dopravy, cenu, vyberte zemi, ze které mají být nabízeny pobočky a danou dopravní metodu povolte.
-    Dále zadejte klíč api a povolte celý modul. Navíc můžete zadat daň dopravy.<br><br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772310/6d8fc58e-2ecb-11e5-9a4e-8c62076ea5e0.png"><img width="400" height="250" src="https://cloud.githubusercontent.com/assets/11771520/8772310/6d8fc58e-2ecb-11e5-9a4e-8c62076ea5e0.png"></a><br><br>
-  </li>
+    On the Edit page, enter the traffic name, price, select a country from which they are offered by branches and the traffic method.
+    Next, enter the API key and loosen the entire module. In addition, you can enter traffic tax. <br> <br>
+    <a href="https://cloud.githubusercontent.com/assets/11771520/8772310/6D8FC58E-2ECB-11E5-9A4E-8C62076EA5E0.PNG"> <img width = "400" height = "250" src = "https : //cloud.githubusercontent.com/assets/11771520/8772310/6D8FC58E-2ECB-11E5-9A4E-8C62076EA5E0.PNG "> </a> <br>
+  </ li>
   <li>
-    Nyní je doprava přes zásilkovnu nabízena vašim zákazníkům. Cílová pobočka bude uvedena vždy v <strong>poznámce objednávky</strong>.
-  </li>
+    Now the right over the shipbody is offered to your customers. The target branch will always be listed in <Strong> Order note </ strong>.
+  </ li>
   <li>
-    <strong style="color: red;">Možný problém: </strong> pokud v košíku OpenCart po volbě dopravy Zásilkovnou tvrdí, že není vybrána doprava, zkontrolujte, zda nemáte v názvu způsobu dopravy tečku, např. <code>Zásilkovna.cz</code>. Pokud ano, odstraňte ji, OpenCart používá tečku pro oddělování položek a špatně pak název rozpozná. 
-</li></ol>
-<h2>Informace o modulu</h2>
-<p>Podporované jazyky:</p>
-<ul>
-  <li>čeština</li>
-  <li>angličtina</li>
-</ul>
-<h3>Podporované verze:</h3>
-<ul>
-  <li>Opencart 1.4.9 a novější</li>
-  <li>Při problému s použitím v jiné verzi nás kontaktujte na adrese <a href="mailto:technicka.podpora@zasilkovna.cz">technicka.podpora@zasilkovna.cz</a></li>
-</ul>
-<h3>Poskytované funkce:</h3>
-<ul>
+    <STRONG STYLE = "COLOR:"> Possible problem: </ strong> If in the OpenCart basket after choosing traffic, it is not selected that it is not selected to right, check that you do not have a dot mode name, eg <Code> Interview. cz </ code>. If so, remove it, OpenCart uses the dot to separate items and the name is then recognized.
+</ li> </ ol>
+<H2> Module information </ h2>
+<p> Supported languages: </ p>
+<Ul>
+  <li> English </ li>
+  <li> English </ li>
+</ ul>
+<H3> Supported versions: </ h3>
+<Ul>
+  <li> opencart 1.4.9 and newer </ li>
+  <LI> When using a problem in another version, please contact us at <a href="mailto:technicka.podpora@zasilkovna.cz"> technical.podpora@zasilkovna.cz </a> </ li>
+</ ul>
+<H3> Features provided: </ h3>
+<Ul>
   <li>Nastavení různé ceny pro různé cílové země</li>
   <li>Nastavení daně dopravy a GEO zóny</li>
   <li>Cílová pobočka je uvedena v poznámce objednávky</li>
