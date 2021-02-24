@@ -18,7 +18,7 @@
   <li>
     On the Edit page, enter the traffic name, price, select a country from which they are offered by branches and the traffic method.
     Next, enter the API key and loosen the entire module. In addition, you can enter traffic tax. <br> <br>
-    <a href="https://cloud.githubusercontent.com/assets/11771520/8772310/6D8FC58E-2ECB-11E5-9A4E-8C62076EA5E0.PNG"> <img width = "400" height = "250" src = "https : //cloud.githubusercontent.com/assets/11771520/8772310/6D8FC58E-2ECB-11E5-9A4E-8C62076EA5E0.PNG "> </a> <br>
+  <br>
   </ li>
   <li>
     Now the right over the shipbody is offered to your customers. The target branch will always be listed in <Strong> Order note </ strong>.
